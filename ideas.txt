@@ -1,0 +1,42 @@
+MOVIES
+title
+year
+director
+writer
+rotten tomatoes score
+format (dvd/blu ray)
+loaned out
+
+
+TV
+title
+season
+year
+show runner
+network
+format
+loaned out
+
+
+BOOKS
+title
+author
+year
+pages
+genre
+loaned out
+
+
+COMICS
+title
+number
+location
+loaned out
+
+
+GRAPHIC NOVELS
+title
+author
+number
+location
+loaned out

@@ -1,0 +1,10 @@
+create main html structure
+minimal css to start (title, circles above columns, columns, individual boxes in columns)
+when you add a movie/tv season/book, store it in the correct column with information
+sort by titles alphabetically
+search
+
+STRETCH GOALS
+add functionality so that clicking the circle for a specific column shows a div with input boxes
+bring in APIs to import info on the items
+sort by different things (by title, by year)
