@@ -1,0 +1,27 @@
+<h1>COMICS</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Title</th>
+    <th>Number</th>
+    <th>Publisher</th>
+    <th>Location</th>
+    <th>Loaned Out</th>
+    <th colspan="5"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @comics.each do |c| %> <!-- no equal sign in the embedded ruby tag around a loop -->
+      <tr>
+        <td><%= c.title %></td>
+        <td><%= c.number %></td>
+        <td><%= c.publisher  %></td>
+        <td><%= c.comic_box %></td>
+        <td><%= c.loaned_out %></td>
+        <td><%= link_to "Delete this comic!", @comic, method: :delete, data: {confirm: "Are you sure?"} %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+
+
+	# custom routes need to come BEFORE the resources
+	resources :users
+	resources :books
+	resources :tvs
+	resources :movies
+	resources :comics
+	resources :graphic_novels
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

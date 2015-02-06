@@ -7,7 +7,7 @@ class CreateMovies < ActiveRecord::Migration
       t.string :writer
       t.string :format
       t.integer :rotten_tomatoes
-      t.boolean :loaned_out
+      t.boolean :loaned_out, default: false
 
       t.timestamps
     end

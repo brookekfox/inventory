@@ -7,7 +7,7 @@ class CreateTvs < ActiveRecord::Migration
       t.string :show_runner
       t.string :network
       t.string :format
-      t.boolean :loaned_out
+      t.boolean :loaned_out, default: false
 
       t.timestamps
     end

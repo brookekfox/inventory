@@ -5,7 +5,7 @@ class CreateGraphicNovels < ActiveRecord::Migration
       t.string :author
       t.integer :number
       t.string :location
-      t.boolean :loaned_out
+      t.boolean :loaned_out, default: false
 
       t.timestamps
     end

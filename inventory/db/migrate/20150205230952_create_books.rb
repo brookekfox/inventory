@@ -6,7 +6,7 @@ class CreateBooks < ActiveRecord::Migration
       t.integer :year
       t.integer :pages
       t.string :genre
-      t.boolean :loaned_out
+      t.boolean :loaned_out, default: false
 
       t.timestamps
     end

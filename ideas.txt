@@ -30,6 +30,7 @@ loaned out
 COMICS
 title
 number
+publisher
 location
 loaned out
 

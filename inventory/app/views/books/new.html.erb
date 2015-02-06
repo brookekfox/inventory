@@ -1,0 +1,14 @@
+<h1>Add a Book!</h1>
+
+<!-- generally no equal sign for a loop, but the exception is for forms -->
+<!-- it is rails convention to loop through a form with an f -->
+<%= form_for @book do |f| %>
+    Title: <%= f.text_field :title %><br>
+    Author: <%= f.text_field :author %><br>
+    Year: <%= f.number_field :year %><br>
+    Pages: <%= f.number_field :pages %><br>
+    Genre: <%= f.text_field :genre %><br>
+    Loaned Out?: <%= f.check_box :loaned_out %><br><br>
+
+    <%= f.submit 'Add this book!' %>
+<% end %> <!-- you don't need an equal sign in the end tag -->
