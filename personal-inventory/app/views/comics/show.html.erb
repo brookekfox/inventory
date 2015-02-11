@@ -1,0 +1,15 @@
+<%= render 'nav' %>
+<h1><%= @comic.title %></h1>
+
+<div class="info-list">
+	<p>Number: <%= @comic.number %></p>
+	<p>Publisher: <%= @comic.publisher %></p>
+	<p>Location: <%= @comic.comic_box %></p>
+	<p>Loaned Out?: <%= @comic.loaned_out %></p>
+</div>
+
+<br><br>
+<p class="link">
+	<%= link_to 'Delete this comic!', @comic, method: :delete, data: {confirm: "Are you sure?"} %><br>
+	<%= link_to 'Edit this comic!', edit_comic_path(@comic) %><br>
+</p>

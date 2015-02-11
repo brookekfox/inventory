@@ -1,0 +1,32 @@
+<%= render 'nav' %>
+<h1>Books</h1>
+
+<table>
+	<thead>
+	<tr>
+		<th>Title</th>
+		<th>Author</th>
+		<th>Year</th>
+		<th>Genre</th>
+		<th>Loaned Out</th>
+		<th>Actions</th>
+		<th colspan="6"></th>
+	</tr>
+	</thead>
+
+	<tbody>
+	<% @books.sort_by { |b| b[:title] }.each do |book| %>
+		<tr>
+			<!--<td><%#= book.user.name %></td>-->
+			<td><%= book.title %></td>
+			<td><%= book.author %></td>
+			<td><%= book.year %></td>
+			<td><%= book.genre %></td>
+			<td><%= book.loaned_out %></td>
+			<td><%= link_to 'View', book %>
+				  <%= link_to 'Delete', book, method: :delete, data: {confirm: "Are you sure?"} %>
+				  <%= link_to 'Edit', edit_book_path(book) %></td>
+		</tr>
+	<% end %>
+	</tbody>
+</table>

@@ -1,0 +1,30 @@
+<%= render 'nav' %>
+<h1>Graphic Novels</h1>
+
+<table>
+	<thead>
+	<tr>
+		<th>Title</th>
+		<th>Author</th>
+		<th>Number</th>
+		<th>Publisher</th>
+		<th>Loaned Out</th>
+		<th colspan="5"></th>
+	</tr>
+	</thead>
+
+	<tbody>
+	<% @graphic_novels.sort_by { |gn| gn[:title] }.each do |graphic| %>
+		<tr>
+			<td><%= graphic.title %></td>
+			<td><%= graphic.author %></td>
+			<td><%= graphic.number %></td>
+			<td><%= graphic.publisher  %></td>
+			<td><%= graphic.loaned_out %></td>
+			<td><%= link_to 'View', graphic %>
+				  <%= link_to 'Delete', graphic, method: :delete, data: {confirm: "Are you sure?"} %>
+				  <%= link_to 'Edit', edit_graphic_novel_path(graphic) %></td>
+		</tr>
+	<% end %>
+	</tbody>
+</table>

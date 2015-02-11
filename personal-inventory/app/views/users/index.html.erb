@@ -1,0 +1,19 @@
+<h1>Users</h1>
+
+<table>
+	<thead>
+	<tr>
+		<th>Name</th>
+		<th colspan="1"></th>
+	</tr>
+	</thead>
+
+	<tbody>
+	<% @users.each do |u| %> <!-- no equal sign in the embedded ruby tag around a loop -->
+		<tr>
+			<td><%= u.name %></td>
+			<td><%= link_to "Delete this user!", @user, method: :delete, data: {confirm: "Are you sure?"} %></td>
+		</tr>
+	<% end %>
+	</tbody>
+</table>

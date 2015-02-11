@@ -1,0 +1,15 @@
+<%= render 'nav' %>
+<h1><%= @graphic_novel.title %></h1>
+
+<div class="info-list">
+	<p>Author: <%= @graphic_novel.author %></p>
+	<p>Number: <%= @graphic_novel.number %></p>
+	<p>Publisher: <%= @graphic_novel.publisher %></p>
+	<p>Loaned Out?: <%= @graphic_novel.loaned_out %></p>
+</div>
+
+<br><br>
+<p class="link">
+	<%= link_to 'Delete this graphic novel!', @graphic_novel, method: :delete, data: {confirm: "Are you sure?"} %><br>
+	<%= link_to 'Edit this graphic novel!', edit_graphic_novel_path(@graphic_novel) %><br>
+</p>

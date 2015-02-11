@@ -1,0 +1,30 @@
+<%= render 'nav' %>
+<h1>Comics</h1>
+
+<table>
+	<thead>
+	<tr>
+		<th>Title</th>
+		<th>Number</th>
+		<th>Publisher</th>
+		<th>Location</th>
+		<th>Loaned Out</th>
+		<th colspan="5"></th>
+	</tr>
+	</thead>
+
+	<tbody>
+	<% @comics.sort_by { |c| c[:title] }.each do |comic| %>
+		<tr>
+			<td><%= comic.title %></td>
+			<td><%= comic.number %></td>
+			<td><%= comic.publisher  %></td>
+			<td><%= comic.comic_box %></td>
+			<td><%= comic.loaned_out %></td>
+			<td><%= link_to 'View', comic %>
+				  <%= link_to 'Delete', comic, method: :delete, data: {confirm: "Are you sure?"} %>
+				  <%= link_to 'Edit', edit_comic_path(comic) %></td>
+		</tr>
+	<% end %>
+	</tbody>
+</table>
