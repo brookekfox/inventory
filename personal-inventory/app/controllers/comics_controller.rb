@@ -1,7 +1,7 @@
 class ComicsController < ApplicationController
 
 	def index
-		@comics = Comic.all
+		@comics = Comic.where(user_id: session['user_id'])
 	end
 
 	def new

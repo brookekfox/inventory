@@ -1,8 +1,9 @@
-<%= render 'nav' %>
-<h1>Add a graphic novel!</h1>
+<%= render 'users/nav' %>
+<h1 class="heading">Add a graphic novel!</h1>
 
 <%= form_for @graphic_novel do |f| %>
 	<div class="info-list">
+		User:        <%= f.collection_select :user_id, User.all, :id, :name, include_blank: '' %><br>
 		Title:  		 <%= f.text_field :title %><br>
 		Author:      <%= f.text_field :author %><br>
 		Number:      <%= f.number_field :number %><br>

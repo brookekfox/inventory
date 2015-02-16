@@ -1,7 +1,8 @@
-<%= render 'nav' %>
-<h1>Add a TV Season!</h1>
+<%= render 'users/nav' %>
+<h1 class="heading">Add a TV Season!</h1>
 
 <%= form_for @tv_season do |f| %>
+	User:        <%= f.collection_select :user_id, User.all, :id, :name, include_blank: '' %><br>
 	Title:  		 <%= f.text_field :title %><br>
 	Season: 		 <%= f.text_field :season %><br>
 	Year:        <%= f.number_field :year %><br>

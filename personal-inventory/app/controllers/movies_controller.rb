@@ -1,7 +1,7 @@
 class MoviesController < ApplicationController
 
 	def index
-		@movies = Movie.all
+		@movies = Movie.where(user_id: session['user_id'])
 	end
 
 	def new

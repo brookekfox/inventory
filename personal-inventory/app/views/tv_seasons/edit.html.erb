@@ -1,5 +1,5 @@
-<%= render 'nav' %>
-<h1>Update <%= @tv_season.title %></h1>
+<%= render 'users/nav' %>
+<h1 class="heading">Update <%= @tv_season.title %></h1>
 
 <%= form_for @tv_season do |f| %>
 	Title:  		 <%= f.text_field :title %><br>

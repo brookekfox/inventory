@@ -1,7 +1,7 @@
 class TvSeasonsController < ApplicationController
 
 	def index
-		@tv_seasons = TvSeason.all
+		@tv_seasons = TvSeason.where(user_id: session['user_id'])
 	end
 
 	def new

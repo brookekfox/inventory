@@ -1,7 +1,7 @@
 class GraphicNovelsController < ApplicationController
 
 	def index
-		@graphic_novels = GraphicNovel.all
+		@graphic_novels = GraphicNovel.where(user_id: session['user_id'])
 	end
 
 	def new

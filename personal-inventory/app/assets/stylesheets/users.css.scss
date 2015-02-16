@@ -1,6 +1,5 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import url(http://fonts.googleapis.com/css?family=Oswald);
+@import url(http://fonts.googleapis.com/css?family=Pacifico);
 
 $light-gray: #f0f0f0;
 $heading-font: 'Pacifico', cursive;
@@ -9,9 +8,10 @@ $body-font: 'Oswald', sans-serif;
 body {
   background-image: url('http://www.psdgraphics.com/file/colorful-triangles-background.jpg');
   background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
 }
-
-h1 {
+.heading {
   font-size: 72pt;
   font-family: $heading-font;
   color: $light-gray;
@@ -21,17 +21,15 @@ h2 {
   font-family: $heading-font;
   color: $light-gray;
 }
-
-table {
+.index-list {
   border: 4px double $light-gray;
-  border-radius: 40px;
+  border-radius: 15px;
   padding: 5%;
   margin: 10% auto;
-  width: 98%;
+  width: 90%;
   background-color: rgba(255,0,127,.6);
   color: $light-gray;
 }
-
 th {
   font-family: $body-font;
   font-size: 24pt;
@@ -40,7 +38,6 @@ th {
   vertical-align: bottom;
   text-align: left;
 }
-
 td {
   font-family: $body-font;
   font-size: 16pt;
@@ -48,7 +45,6 @@ td {
   width: 250px;
   vertical-align: bottom;
 }
-
 .ruby-link {
   color: $light-gray;
   font-family: $body-font;
@@ -60,19 +56,18 @@ td {
   width: 100px;
   height: 100px;
 }
-
 .ruby-form {
   border: 4px double $light-gray;
   border-radius: 40px;
   padding: 5%;
   margin: 10% auto;
-  width: 98%;
+  width: 80%;
   background-color: rgba(255,0,127,.6);
   color: $light-gray;
   font-family: $body-font;
   font-size: 14pt;
+  text-align: center;
 }
-
 .info-list {
   border: 4px double $light-gray;
   border-radius: 40px;
@@ -83,13 +78,14 @@ td {
   font-family: $body-font;
   font-size: 18pt;
 }
-
-//.hide {
-//  display: none;
-//}
-
 .nav-bar {
   height: 250px;
   width: 100%;
   background-color: #ffffff;
+}
+.circles {
+  height: 300px;
+}
+.logo {
+  height: 70px;
 }

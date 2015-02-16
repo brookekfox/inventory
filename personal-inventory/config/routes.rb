@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
 
-	resources :users, :books, :movies, :tv_seasons, :comics, :graphic_novels
+	resources :books, :movies, :tv_seasons, :comics, :graphic_novels
+	resources :users, :sessions
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'sessions#new'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

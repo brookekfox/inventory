@@ -1,7 +1,8 @@
-<%= render 'nav' %>
-<h1>Add a movie!</h1>
+<%= render 'users/nav' %>
+<h1 class="heading">Add a movie!</h1>
 
 <%= form_for @movie do |f| %>
+	User:        <%= f.collection_select :user_id, User.all, :id, :name, include_blank: '' %><br>
 	Title:  		 <%= f.text_field :title %><br>
 	Year:        <%= f.number_field :year %><br>
 	Director:    <%= f.text_field :director %><br>

@@ -1,7 +1,8 @@
 class BooksController < ApplicationController
 
 	def index
-		@books = Book.all
+		# @books = Book.all
+		@books = Book.where(user_id: session['user_id'])
 	end
 
 	def new
