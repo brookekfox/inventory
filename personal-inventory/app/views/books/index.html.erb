@@ -1,6 +1,8 @@
 <%= render 'users/nav' %>
 <h1 class="heading">Books</h1>
 
+<div class="total-things"><%= Book.where(user_id: session['user_id']).count %></div>
+
 <table class="index-list">
 	<thead>
 	<tr>
@@ -18,11 +20,11 @@
 	<% @books.sort_by { |b| b[:title] }.each do |book| %>
 		<tr>
 			<!--<td><%#= book.user.name %></td>-->
-			<td><p class="text-capitalize"><%= book.title %></p></td>
-			<td><p class="text-capitalize"><%= book.author_first %> <%= book.author_last %></p></td>
-			<td><p class="text-capitalize"><%= book.year %></p></td>
-			<td><p class="text-capitalize"><%= book.genre %></p></td>
-			<td><p class="text-capitalize"><%= book.loaned_out %></p></td>
+			<td><%= book.title %></td>
+			<td><%= book.author %></td>
+			<td><%= book.year %></td>
+			<td><%= book.genre %></td>
+			<td><%= book.loaned_out %></td>
 			<td><%= link_to 'View', book %>
 				  <%= link_to 'Delete', book, method: :delete, data: {confirm: "Are you sure?"} %>
 				  <%= link_to 'Edit', edit_book_path(book) %></td>

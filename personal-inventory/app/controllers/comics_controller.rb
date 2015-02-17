@@ -23,8 +23,7 @@ class ComicsController < ApplicationController
 
 	def update
 		@comic = Comic.find(params[:id])
-		if @comic.update_attributes(params.require(:comic).permit(:title, :number, :publisher, :comic_box,
-																																			 :loaned_out, :user_id))
+		if @comic = Comic.update_attributes(params.require(:comic).permit(:title, :number, :publisher, :comic_box, :loaned_out, :user_id))
 			redirect_to comics_path
 		else
 			render 'edit'

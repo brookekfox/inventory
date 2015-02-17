@@ -11,18 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150216202636) do
+ActiveRecord::Schema.define(version: 20150211180116) do
 
   create_table "books", force: true do |t|
     t.string   "title"
+    t.string   "author"
     t.integer  "year"
     t.string   "genre"
     t.boolean  "loaned_out"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "author_first"
-    t.string   "author_last"
   end
 
   create_table "comics", force: true do |t|

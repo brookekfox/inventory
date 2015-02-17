@@ -89,3 +89,12 @@ td {
 .logo {
   height: 70px;
 }
+.total-things {
+  height: 100px;
+  width: 100px;
+  background: url("assets/logo-blank.png") no-repeat;
+  background-size: cover;
+  color: white;
+  font-size: 14pt;
+  font-family: $body-font;
+}
