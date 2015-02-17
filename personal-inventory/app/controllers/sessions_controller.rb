@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-
 	def new
 		@user = User.new #the new session form is based on a user
 	end
@@ -12,7 +11,7 @@ class SessionsController < ApplicationController
 			# redirect_to controller: 'users', something: session['user_id']
 			redirect_to user_path(session['user_id'])
 		else
-			redirect_to new_session_path
+			redirect_to new_sessions_path
 		end
 	end
 	def destroy

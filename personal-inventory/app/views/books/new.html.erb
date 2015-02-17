@@ -1,5 +1,9 @@
 <%= render 'users/nav' %>
-<h1 class="heading">Add a book!</h1>
+
+<div class="row">
+	<div class="col-md-6 text-center"><h1 class="heading">Add a book!</h1></div>
+	<div class="col-md-6 text-center"><%= link_to image_tag('cancel.png', class: 'small-circle'), books_path(session['user_id']) %></div>
+</div>
 
 <%= form_for @book do |f| %>
 <div class="info-list">
@@ -15,5 +19,4 @@
 
 	<%= f.submit 'Add this book!' %><br>
 </div>
-<p class="ruby-link"><%= link_to 'Cancel', books_path %></p>
 <% end %>

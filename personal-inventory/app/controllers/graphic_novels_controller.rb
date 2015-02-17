@@ -23,7 +23,7 @@ class GraphicNovelsController < ApplicationController
 
 	def update
 		@graphic_novel = GraphicNovel.find(params[:id])
-		if @graphic_novel = GraphicNovel.update_attributes(params.require(:graphic_novel).permit(:title, :number, :publisher, :loaned_out, :user_id))
+		if @graphic_novel.update_attributes(params.require(:graphic_novel).permit(:title, :number, :publisher, :loaned_out, :user_id))
 			redirect_to graphic_novels_path
 		else
 			render 'edit'

@@ -1,15 +1,22 @@
 <%= render 'users/nav' %>
-<h1 class="heading"><%= @book.title %></h1>
 
-<div class="info-list">
-	<p>Author: <%= @book.author %></p>
-	<p>Year:   <%= @book.year %></p>
-	<p>Genre:  <%= @book.genre %></p>
-	<p>Loaned Out?: <%= @book.loaned_out %></p>
+<div class="row">
+	<div class="col-md-6 text-center"><h1 class="heading"><%= @book.title %></h1></div>
+	<div class="col-md-6 text-center">
+		<%= link_to image_tag('delete.png', class: 'small-circle'), @book, method: :delete, data: {confirm: "Are you sure?"} %>
+		<%= link_to image_tag('edit.png', class: 'small-circle'), edit_book_path(@book) %>
+	</div>
 </div>
 
-<br><br>
-<p class="link">
-	<%= link_to 'Delete this book!', @book, method: :delete, data: {confirm: "Are you sure?"} %><br>
-	<%= link_to 'Edit this book!', edit_book_path(@book) %><br>
-</p>
+<div class="info-list">
+	<p class="text-capitalize">Author: <%= @book.author %></p>
+	<p class="text-capitalize">Year:   <%= @book.year %></p>
+	<p class="text-capitalize">Genre:  <%= @book.genre %></p>
+	<p class="text-capitalize">Loaned Out?: <%= @book.loaned_out %></p>
+</div>
+
+<!--<br><br>-->
+<!--<p class="link">-->
+	<%#= link_to 'Delete this book!', @book, method: :delete, data: {confirm: "Are you sure?"} %>
+	<%#= link_to 'Edit this book!', edit_book_path(@book) %>
+<!--</p>-->
