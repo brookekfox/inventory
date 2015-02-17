@@ -5,7 +5,7 @@
 <div class="info-list">
 	User:        <%= f.collection_select :user_id, User.all, :id, :name, include_blank: '' %><br>
 	Title:  		 <%= f.text_field :title %><br>
-	Author:      <%= f.text_field :author %><br>
+	Author:      <%= f.text_field :author_first %> <%= f.text_field :author_last %><br>
 	Year:        <%= f.number_field :year %><br>
 	Genre:       <%= f.text_field :genre %><br>
 	Loaned Out?: <%= f.check_box :loaned_out %>
