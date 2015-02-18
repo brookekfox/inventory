@@ -79,6 +79,17 @@ td {
   font-size: 18pt;
   width: 70%;
 }
+.list-of-stuff {
+  border: 4px double $light-gray;
+  border-radius: 40px;
+  padding: 5%;
+  margin: 0 auto;
+  background-color: rgba(255,0,127,.6);
+  color: $light-gray;
+  font-family: $body-font;
+  font-size: 18pt;
+  width: 70%;
+}
 .nav-bar {
   height: 250px;
   width: 100%;

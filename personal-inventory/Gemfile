@@ -46,3 +46,4 @@ group :development do
 end
 
 gem 'paperclip', '~> 4.2'
+gem 'httparty', '~> 0.11.0'

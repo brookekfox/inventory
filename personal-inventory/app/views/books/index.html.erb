@@ -9,32 +9,34 @@
 	<!--<div class="total-things"><%#= Book.where(user_id: session['user_id']).count %></div>-->
 <!--</div>-->
 
-<table class="index-list">
-	<thead>
-	<tr>
-		<th>Title</th>
-		<th>Author</th>
-		<th>Year</th>
-		<th>Genre</th>
-		<th>Loaned Out</th>
-		<th>Actions</th>
-		<th colspan="6"></th>
-	</tr>
-	</thead>
-
-	<tbody>
-	<% @books.sort_by { |b| b[:title] }.each do |book| %>
+<div class="index-list">
+	<table>
+		<thead>
 		<tr>
-			<!--<td><%#= book.user.name %></td>-->
-			<td class="text-capitalize"><%= book.title %></td>
-			<td class="text-capitalize"><%= book.author %></td>
-			<td><%= book.year %></td>
-			<td class="text-capitalize"><%= book.genre %></td>
-			<td class="text-capitalize"><%= book.loaned_out %></td>
-			<td><%= link_to 'View', book %>
-				  <%= link_to 'Delete', book, method: :delete, data: {confirm: "Are you sure?"} %>
-				  <%= link_to 'Edit', edit_book_path(book) %></td>
+			<th>Title</th>
+			<th>Author</th>
+			<th>Year</th>
+			<th>Genre</th>
+			<th>Loaned Out</th>
+			<th>Actions</th>
+			<th colspan="6"></th>
 		</tr>
-	<% end %>
-	</tbody>
-</table>
+		</thead>
+
+		<tbody>
+		<% @books.sort_by { |b| b[:title] }.each do |book| %>
+			<tr>
+				<!--<td><%#= book.user.name %></td>-->
+				<td class="text-capitalize"><%= book.title %></td>
+				<td class="text-capitalize"><%= book.author %></td>
+				<td><%= book.year %></td>
+				<td class="text-capitalize"><%= book.genre %></td>
+				<td class="text-capitalize"><%= book.loaned_out %></td>
+				<td><%= link_to 'View', book %>
+						<%= link_to 'Delete', book, method: :delete, data: {confirm: "Are you sure?"} %>
+						<%= link_to 'Edit', edit_book_path(book) %></td>
+			</tr>
+		<% end %>
+		</tbody>
+	</table>
+</div>

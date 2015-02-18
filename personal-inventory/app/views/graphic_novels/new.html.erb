@@ -1,5 +1,9 @@
 <%= render 'users/nav' %>
-<h1 class="heading">Add a graphic novel!</h1>
+
+<div class="row">
+	<div class="col-md-6 text-center"><h1 class="heading">Add a graphic novel!</h1></div>
+	<div class="col-md-6 text-center"><%= link_to image_tag('cancel.png', class: 'small-circle'), graphic_novels_path(session['user_id'])	%></div>
+</div>
 
 <%= form_for @graphic_novel do |f| %>
 	<div class="info-list">
@@ -9,11 +13,8 @@
 		Number:      <%= f.number_field :number %><br>
 		Publisher:   <%= f.text_field :publisher %><br>
 		Loaned Out?: <%= f.check_box :loaned_out %>
-		<%#= f.radio_button :loaned_out, 'No' %><%#= f.label :loaned_out, 'No', value: 'No' %>
-		<%#= f.radio_button :loaned_out, 'Yes' %><%#= f.label :loaned_out, 'Yes', value: 'Yes' %>
 		<br><br>
 
 		<%= f.submit 'Add this graphic novel!' %><br>
 	</div>
-	<p class="ruby-link"><%= link_to 'Cancel', graphic_novels_path %></p>
 <% end %>

@@ -1,30 +1,36 @@
 <%= render 'users/nav' %>
-<h1 class="heading">Comics</h1>
 
-<table class="index-list">
-	<thead>
-	<tr>
-		<th>Title</th>
-		<th>Number</th>
-		<th>Publisher</th>
-		<th>Location</th>
-		<th>Loaned Out</th>
-		<th colspan="5"></th>
-	</tr>
-	</thead>
+<div class="row">
+	<div class="col-md-6 text-center"><h1 class="heading">Comics</h1></div>
+	<div class="col-md-6 text-center"><%= link_to image_tag('add.png', class: 'small-circle'), new_comic_path %></div>
+</div>
 
-	<tbody>
-	<% @comics.sort_by { |c| c[:title] }.each do |comic| %>
+<div class="index-list">
+	<table>
+		<thead>
 		<tr>
-			<td><%= comic.title %></td>
-			<td><%= comic.number %></td>
-			<td><%= comic.publisher  %></td>
-			<td><%= comic.comic_box %></td>
-			<td><%= comic.loaned_out %></td>
-			<td><%= link_to 'View', comic %>
-				  <%= link_to 'Delete', comic, method: :delete, data: {confirm: "Are you sure?"} %>
-				  <%= link_to 'Edit', edit_comic_path(comic) %></td>
+			<th>Title</th>
+			<th>Number</th>
+			<th>Publisher</th>
+			<th>Location</th>
+			<th>Loaned Out</th>
+			<th colspan="5"></th>
 		</tr>
-	<% end %>
-	</tbody>
-</table>
+		</thead>
+
+		<tbody>
+		<% @comics.sort_by { |c| c[:title] }.each do |comic| %>
+			<tr>
+				<td class="text-capitalize"><%= comic.title %></td>
+				<td><%= comic.number %></td>
+				<td class="text-capitalize"><%= comic.publisher  %></td>
+				<td class="text-capitalize"><%= comic.comic_box %></td>
+				<td class="text-capitalize"><%= comic.loaned_out %></td>
+				<td><%= link_to 'View', comic %>
+						<%= link_to 'Delete', comic, method: :delete, data: {confirm: "Are you sure?"} %>
+						<%= link_to 'Edit', edit_comic_path(comic) %></td>
+			</tr>
+		<% end %>
+		</tbody>
+	</table>
+</div>
